@@ -29,16 +29,37 @@ public class PlayerView_UI : MonoBehaviour
             j++;
         }
 
-        InitCard();
+        CardItems[0].LoadImage();
     }
 
     void InitCard()
     {
-        foreach(Card c in CardItems)
+        //foreach (Card c in CardItems)
+        //{
+        //    c.gameObject.SetActive(false);
+        //    c.index = 0;
+        //    c.SetCard(CardPos[c.index], Scale[c.index]);
+        //}
+    }
+
+    public void RollListview()
+    {
+        int nextIndex = 0;
+        for(int i=0; i<CardItems.Length; i++)
         {
-            c.gameObject.SetActive(false);
-            c.index = 0;
-            c.SetCard(CardPos[c.index], Scale[c.index]);
+            nextIndex = CardItems[i].Index+1;
+            if(nextIndex == CardItems.Length)
+            {
+                nextIndex = 0;
+            }
+            CardItems[i].Index = nextIndex;
+
+            if(CardItems[i].Index == 0)
+            {
+                CardItems[i].LoadImage();
+            }
+
+            CardItems[i].SetCard(CardPos[nextIndex], Scale[nextIndex]);
         }
     }
 

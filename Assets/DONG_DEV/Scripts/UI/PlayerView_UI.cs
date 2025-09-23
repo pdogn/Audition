@@ -30,17 +30,10 @@ public class PlayerView_UI : MonoBehaviour
         }
 
         CardItems[0].LoadImage();
+
+        InvokeRepeating("RollListview", 1f, 1f);
     }
 
-    void InitCard()
-    {
-        //foreach (Card c in CardItems)
-        //{
-        //    c.gameObject.SetActive(false);
-        //    c.index = 0;
-        //    c.SetCard(CardPos[c.index], Scale[c.index]);
-        //}
-    }
 
     public void RollListview()
     {

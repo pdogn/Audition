@@ -26,7 +26,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] Transform BodyJoints1;
     [SerializeField] Transform BodyJoints2;
 
-    [SerializeField] private float targetHeight = 1.8f; // chiều cao chuẩn (m)
+    //[SerializeField] private float targetHeight = 1.8f; // chiều cao chuẩn (m)
     [SerializeField] private float scale = 3f;          // scale hiển thị trong Unity
 
     void Start()

@@ -22,7 +22,7 @@ public class Card : MonoBehaviour
                 {
                     this.transform.GetChild(0).gameObject.SetActive(false);
                 }
-                if (index == 1)
+                if (index == 1 && cardImage.sprite != null)
                 {
                     this.transform.GetChild(0).gameObject.SetActive(true);
                 }
@@ -55,6 +55,10 @@ public class Card : MonoBehaviour
     public void LoadImage()
     {
         cardImage.sprite = UIManager.Instance.GetImageInQueue();
+        if (cardImage.sprite == null)
+        {
+            this.transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 
     void UpdateCard(RectTransform _target, float _scale, float duration)

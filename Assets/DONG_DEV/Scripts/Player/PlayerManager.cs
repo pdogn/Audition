@@ -26,29 +26,32 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] Transform BodyJoints1;
     [SerializeField] Transform BodyJoints2;
 
-    //[SerializeField] private float targetHeight = 1.8f; // chiều cao chuẩn (m)
     [SerializeField] private float scale = 3f;          // scale hiển thị trong Unity
+
+    //Các bộ phận của player 1
+    public PosePath poseOfPlayer1;
+    //Các bộ phận của player 2
+    public PosePath poseOfPlayer2;
 
     void Start()
     {
         allJoints = (JointType[])System.Enum.GetValues(typeof(JointType));
 
         jointObjects1 = SpawnJoint(BodyJoints1);
-        jointObjects2 = SpawnJoint(BodyJoints2);
+        poseOfPlayer1 = new PosePath();
+        PoseMatcher.Instance.LoadPath(poseOfPlayer1, jointObjects1);
 
-        //int i = 0;
-        //int j = 0;
-        //jointObjects1 = new GameObject[25];
-        //jointObjects2 = new GameObject[25];
-        //foreach (Transform c in BodyJoints1)
+        jointObjects2 = SpawnJoint(BodyJoints2);
+        poseOfPlayer2 = new PosePath();
+        PoseMatcher.Instance.LoadPath(poseOfPlayer2, jointObjects2);
+
+        //foreach (var c in poseOfPlayer1.parts["head"])
         //{
-        //    jointObjects1[i] = c.gameObject;
-        //    i++;
+        //    Debug.Log("lkj:::::: " + c.name + "::: " + c.transform.parent);
         //}
-        //foreach (Transform c in BodyJoints2)
+        //foreach (var c in poseOfPlayer2.parts["head"])
         //{
-        //    jointObjects2[j] = c.gameObject;
-        //    j++;
+        //    Debug.Log("lkj:::::: " + c.name + "::: " + c.transform.parent);
         //}
     }
 
@@ -57,6 +60,7 @@ public class PlayerManager : MonoBehaviour
         For_Kinect();
         UpdateIndexFrameForTexture2D();
         UpdateBodyJoint();
+
     }
 
     private void For_Kinect()

@@ -69,10 +69,3 @@ public class Card : MonoBehaviour
         MoveToTargetAndScale(_target, _scale, duration);
     }
 }
-
-
-[System.Serializable]
-public class CardData
-{
-    public Sprite sprite;
-}

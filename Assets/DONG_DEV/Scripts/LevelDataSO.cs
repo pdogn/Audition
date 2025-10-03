@@ -7,6 +7,30 @@ using UnityEngine;
 public class GameDataSO : ScriptableObject
 {
     public AudioClip danceMusic;
-    public List<CardData> cardItems;
+    public List<Data> cardItems;
+}
+
+[System.Serializable]
+public class Data
+{
+    public Sprite sprite;
+    public CheckPoseData chkData;
+}
+
+[System.Serializable]
+public class CheckPoseData
+{
+    public List<Path> _path;
+}
+
+public enum Path
+{
+    dau,
+    than,
+    vai,
+    tay_trai,
+    tay_phai,
+    chan_trai,
+    chan_phai
 }
 

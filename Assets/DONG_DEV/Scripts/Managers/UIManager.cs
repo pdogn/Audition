@@ -8,7 +8,7 @@ public class UIManager : Code_Singleton<UIManager>
 
     public PlayerView_UI playerViews;
 
-    private GameDataSO _gameDataSo;
+    public GameDataSO _gameDataSo;
 
     public Queue<Sprite> ImageQueue;
 

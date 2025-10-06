@@ -15,15 +15,16 @@ public class Data
 {
     public Sprite sprite;
     public CheckPoseData chkData;
+    public ConfigDataSO poseData;
 }
 
 [System.Serializable]
 public class CheckPoseData
 {
-    public List<Path> _path;
+    public List<PathPlayer> _path;
 }
 
-public enum Path
+public enum PathPlayer
 {
     dau,
     than,

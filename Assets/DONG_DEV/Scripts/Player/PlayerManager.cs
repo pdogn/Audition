@@ -22,7 +22,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject jointPrefab;
 
     private GameObject[] jointObjects1;
+    public GameObject[] JointObjects1 => jointObjects1;
+
     private GameObject[] jointObjects2;
+    public GameObject[] JointObjects2 => jointObjects2;
+
     [SerializeField] Transform BodyJoints1;
     [SerializeField] Transform BodyJoints2;
 

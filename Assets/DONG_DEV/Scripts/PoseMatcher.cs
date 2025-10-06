@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PoseMatcher : Code_Singleton<PoseMatcher>
 {
+    public PlayerManager playerManager;
+
     private readonly Dictionary<string, int[]> jointIndexGroups = new Dictionary<string, int[]>
     {
         { "head",       new [] { 3, 2, 20 } },
